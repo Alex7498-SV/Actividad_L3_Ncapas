@@ -1,9 +1,14 @@
 package com.uca.capas.controller;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.uca.capas.domain.Student;
 
 @Controller
 public class MainController {
@@ -13,5 +18,14 @@ public class MainController {
 	@ResponseBody
 	public String ejemplo1() {
 		return "Bienvenidos\n"+"Programacion N-capas";
+	}
+	
+	@GetMapping("/ejemplo2")
+	@ResponseBody
+	public List<Student> ejemplo2(){
+		return Arrays.asList(
+				(new Student("Nombre1", "Apellido", "10/1012020", "jasd", true)), 
+				(new Student("Nombre2", "Apellido", "10/1012020", "ajsl",false))
+				);
 	}
 }
