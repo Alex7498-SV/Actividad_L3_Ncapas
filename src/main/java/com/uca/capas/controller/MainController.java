@@ -53,6 +53,11 @@ public class MainController {
 	@GetMapping("/listado")
 	public ModelAndView listado() {
 		ModelAndView mav = new ModelAndView();
+		mav.setViewName("listado");
+		mav.addObject("studentList", this.students);
+		
+		
+		return mav;
 		
 		
 	}
