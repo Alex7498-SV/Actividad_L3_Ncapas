@@ -35,7 +35,7 @@ public class ProductController {
 	@PostMapping("validar")
 	@ResponseBody
 	public String validar(Product product) {
-		return productos.get(product.getId()).getNombre();
+		return productos.get(product.getId()).getNombre() + "\n" + productos.get(product.getId()).getCantidad();
 	}
 	
 }
